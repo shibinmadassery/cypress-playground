@@ -10,6 +10,7 @@ module.exports = defineConfig({
   },
   "env": {
     "username": "test",
-    "password": "test"
+    "password": "test",
+    "invalid": "invalid"
   }
 });
