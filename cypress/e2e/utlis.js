@@ -2,6 +2,10 @@
 const username = Cypress.env('username')
 const password = Cypress.env('password')
 const invalid = Cypress.env('invalid')
+const firstName = Math.random().toString(36).substring(2,7);
+const cardnumber = ('4242 4242 4242 4242')
+const phonenumber = Math.floor(Math.random() * 1000000000);
+const address = ('105 Lubowitz Creek, Suite 276, 40176, Molliehaven, Montana, United States')
 
 export function test01() {
   cy.visit('')
@@ -41,4 +45,19 @@ export function VerifySignupPage() {
     cy.get('form > table > tbody > :nth-child(1) > :nth-child(1)').contains('Username')
     cy.get('tbody > :nth-child(2) > :nth-child(1)').contains('Password')
     cy.get(':nth-child(3) > td > input').contains('login').should('be.visible')
+}
+
+export function Singup() {
+    cy.visit('/login.php')
+    cy.contains('signup here').click()
+    cy.get(':nth-child(1) > :nth-child(2) > input').type(firstName+'username')
+    cy.get('tbody > :nth-child(2) > :nth-child(2)').type(password)
+    cy.get(':nth-child(3) > :nth-child(2) > input').type(password)
+    cy.get(':nth-child(4) > :nth-child(2) > input').type(firstName+ ' lastname')
+    cy.get(':nth-child(5) > :nth-child(2) > input').type(cardnumber)
+    cy.get(':nth-child(6) > :nth-child(2) > input').type(firstName+'email@email.com')
+    cy.get(':nth-child(7) > :nth-child(2) > input').type(phonenumber)
+    cy.get('textarea').type(address)
+    cy.get(':nth-child(9) > td > input').contains('signup').click();
+    cy.contains('You have been introduced to our database with the above informations:').should('be.visible');
 }
