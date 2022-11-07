@@ -66,11 +66,18 @@ export function Singup() {
 }
 
 export function gumroadLogin() {
-    cy.viewport('macbook-15')
     cy.visit(loginUrl)
     cy.get(':nth-child(6) > .required').type(gumroadusername);
     cy.get('.password').type(gumroadpassword);
     cy.get('.row > .button-primary').click();
     cy.visit(dashboardUrl)
     cy.get('summary').should('be.visible');
+}
+
+export function verifyinggumroaddashboard() {
+    cy.url().should('contain', 'dashboard')
+    cy.get('.logo-full').should('be.visible')    //Gumroad Logo
+    cy.get('[aria-current="page"]').contains('Home').should('be.visible')
+    cy.get('header > h1').contains('Hey, SHIBIN! Welcome back to Gumroad').should('be.visible')
+    cy.get('[href="https://app.staging.gumroad.com/products"]').contains('Products').should('be.visible')
 }
