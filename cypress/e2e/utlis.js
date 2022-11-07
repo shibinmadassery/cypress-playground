@@ -6,6 +6,7 @@ const firstName = Math.random().toString(36).substring(2,7);
 const cardnumber = ('4242 4242 4242 4242')
 const phonenumber = Math.floor(Math.random() * 1000000000);
 const address = ('105 Lubowitz Creek, Suite 276, 40176, Molliehaven, Montana, United States')
+const loginUrl = ("https://staging.gumroad.com/login?gr_internal=1")
 
 export function test01() {
   cy.visit('')
@@ -60,4 +61,16 @@ export function Singup() {
     cy.get('textarea').type(address)
     cy.get(':nth-child(9) > td > input').contains('signup').click();
     cy.contains('You have been introduced to our database with the above informations:').should('be.visible');
+}
+
+export function gumroadLogin() {
+    cy.viewport('macbook-15')
+    cy.visit("https://staging.gumroad.com/login?gr_internal=1")
+    cy.get(':nth-child(6) > .required').type('shibin.m+001@gmail.com');
+    cy.get('.password').type('Welcome@gumroad');
+    cy.get('.row > .button-primary').click();
+    cy.visit("https://app.staging.gumroad.com/dashboard")
+    cy.get('summary').should('be.visible');
+
+
 }
