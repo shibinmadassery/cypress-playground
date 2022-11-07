@@ -1,4 +1,4 @@
-import {clickUpdateButton, login, UpdatePhoneNumber, VerficationAfterLogin} from "../e2e/utlis"
+import {clickUpdateButton, login, UpdatePhoneNumber, VerficationAfterLogin} from "./utlis"
 describe('update information', () => {
   
   it('login to website', () => {

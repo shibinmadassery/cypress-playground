@@ -1,11 +1,6 @@
-import {login, VerficationAfterLogin} from "../e2e/utlis"
-describe('Login & verify login page', () => {
-  it('login to website', () => {
-    login();
-  })
-
-  it('verify login page', () => {
-    VerficationAfterLogin();
-  })
-  
-})
+import { gumroadLogin, TestFunction01, verifyinggumroaddashboard } from "./utlis";
+describe("Login to Gumroad", () => {
+  it("login to gumroad and verify after login", () => {
+    gumroadLogin();
+  });
+});
