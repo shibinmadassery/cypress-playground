@@ -7,6 +7,8 @@ const cardnumber = ('4242 4242 4242 4242')
 const phonenumber = Math.floor(Math.random() * 1000000000);
 const address = ('105 Lubowitz Creek, Suite 276, 40176, Molliehaven, Montana, United States')
 const loginUrl = ("https://staging.gumroad.com/login?gr_internal=1")
+const dashboardUrl = ('https://app.staging.gumroad.com/dashboard')
+const gumroadusername = 'shibin.m+001@gmail.com'; const gumroadpassword = `Welcome@gumroad`;
 
 export function test01() {
   cy.visit('')
@@ -65,12 +67,10 @@ export function Singup() {
 
 export function gumroadLogin() {
     cy.viewport('macbook-15')
-    cy.visit("https://staging.gumroad.com/login?gr_internal=1")
-    cy.get(':nth-child(6) > .required').type('shibin.m+001@gmail.com');
-    cy.get('.password').type('Welcome@gumroad');
+    cy.visit(loginUrl)
+    cy.get(':nth-child(6) > .required').type(gumroadusername);
+    cy.get('.password').type(gumroadpassword);
     cy.get('.row > .button-primary').click();
-    cy.visit("https://app.staging.gumroad.com/dashboard")
+    cy.visit(dashboardUrl)
     cy.get('summary').should('be.visible');
-
-
 }
