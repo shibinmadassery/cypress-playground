@@ -82,3 +82,10 @@ export function verifyinggumroaddashboard() {
     cy.get('header > h1').contains('Hey, SHIBIN! Welcome back to Gumroad').should('be.visible')
     cy.get('[href="https://app.staging.gumroad.com/products"]').contains('Products').should('be.visible')
 }
+
+export function logout() {
+    cy.get('.user-avatar').click();
+    cy.contains("Logout").click();
+    cy.get('h1').contains('Welcome back').should('be.visible');
+
+}
