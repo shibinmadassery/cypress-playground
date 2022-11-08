@@ -11,7 +11,8 @@ describe("testing", () => {
     // cy.get('.row > .button-primary').click();
     //gumroadLogin();
     //Cypress.env()
-    cy.visit(Cypress.env('production'));
+    // cy.visit(Cypress.env('production'));
+    cy.visit(Cypress.env('internalloginUrl'));
 
   });
 });

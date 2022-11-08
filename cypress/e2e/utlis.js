@@ -66,7 +66,8 @@ export function Singup() {
 }
 
 export function gumroadLogin() {
-    cy.visit(loginUrl)
+    //cy.visit(loginUrl)    
+    cy.visit(Cypress.env('internalloginUrl'));
     cy.get(':nth-child(6) > .required').type(gumroadusername);
     cy.get('.password').type(gumroadpassword);
     cy.get('.row > .button-primary').click();

@@ -18,6 +18,7 @@ module.exports = defineConfig({
     "password": "test",
     "invalid": "invalid",
     "staging": 'https://staging.gumroad.com',
-    "production": 'https://gumroad.com/'
+    "production": 'https://gumroad.com/',
+    "internalloginUrl": "https://staging.gumroad.com/login?gr_internal=1"
   }
 });
