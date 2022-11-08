@@ -10,5 +10,8 @@ describe("testing", () => {
     // cy.get('.password').type('Welcome@gumroad');
     // cy.get('.row > .button-primary').click();
     //gumroadLogin();
+    //Cypress.env()
+    cy.visit(Cypress.env('production'));
+
   });
 });

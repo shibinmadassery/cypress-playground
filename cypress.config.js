@@ -16,6 +16,8 @@ module.exports = defineConfig({
   "env": {
     "username": "test",
     "password": "test",
-    "invalid": "invalid"
+    "invalid": "invalid",
+    "staging": 'https://staging.gumroad.com',
+    "production": 'https://gumroad.com/'
   }
 });
