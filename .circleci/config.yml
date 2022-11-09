@@ -7,4 +7,4 @@ workflows:
       - cypress/run:
           yarn: true
           cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
-          config-file: cypress.config.js
+          config-file: 'cypress.config.js'
