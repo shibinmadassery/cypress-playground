@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypressOpen": "cypress open",
     "cypressRun": "cypress run",
-    "cypressRecordRun": "cypress run --record --key ff15dc12-7acf-4ea5-925c-604884ab683e"
+    "cypressRecRun": "cypress run --record --key ff15dc12-7acf-4ea5-925c-604884ab683e"
   },
   "repository": {
     "type": "git",
