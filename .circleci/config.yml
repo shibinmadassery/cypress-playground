@@ -4,4 +4,6 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/run
+      - cypress/run:
+          yarn: true
+          cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
