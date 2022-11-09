@@ -12,7 +12,7 @@ describe("testing", () => {
     //gumroadLogin();
     //Cypress.env()
     // cy.visit(Cypress.env('production'));
-    cy.visit(Cypress.env('internalloginUrl'));
+    //cy.visit(Cypress.env('internalloginUrl'));
 
   });
 });
