@@ -97,3 +97,14 @@ export function visitGumroadHomePage() {
 export function navigatetoLoginPage() {
     cy.get('.log-in > div').contains('Login').click();
 }
+
+export function verifyingGumroadHomePage() {
+    cy.get('.mega-gum-logo').should('be.visible')
+    
+    cy.contains('Features');cy.contains('Pricing');
+    cy.contains('University');cy.contains('Blog');
+    cy.contains('Podcast');cy.contains('Discover');
+    
+    cy.contains('Login');cy.contains('Start Selling');
+
+}
