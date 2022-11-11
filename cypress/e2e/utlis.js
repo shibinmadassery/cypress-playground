@@ -89,3 +89,11 @@ export function logout() {
     cy.get('h1').contains('Welcome back').should('be.visible');
 
 }
+
+export function visitGumroadHomePage() {
+    cy.visit(Cypress.env('staging'));
+}
+
+export function navigatetoLoginPage() {
+    cy.get('.log-in > div').contains('Login').click();
+}
