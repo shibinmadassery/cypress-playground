@@ -16,3 +16,5 @@ scheduled-workflow:
           branches:
             only:
               - master
+                
+    - cypress/run
