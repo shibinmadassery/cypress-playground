@@ -17,5 +17,3 @@ scheduled-workflow:
             branches:
               only:
                 - master
-    jobs:
-      - cypress/run
