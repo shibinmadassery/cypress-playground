@@ -17,5 +17,5 @@ scheduled-workflow:
           branches:
             only:
               - main
-      jobs:
-        -cypress/run
+  jobs:
+    -cypress/run
