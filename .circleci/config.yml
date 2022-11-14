@@ -10,12 +10,11 @@ workflows:
           #start: npm start
 
 scheduled-workflow:
-  triggers:
-    - schedule:
-        cron: "5 * * * *"
-        filters:
-          branches:
-            only:
-              - main
-  jobs:
-    -cypress/run
+    triggers:
+      - schedule:
+          cron: "5 * * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - cypress/run
