@@ -11,10 +11,9 @@ workflows:
 scheduled-workflow:
   triggers:
     - schedule:
-        cron: "5 * * * 1,2,3,4,5,6"
+        cron: "60 * * * 1,2,3,4,5,6"
         filters:
           branches:
             only:
               - master
-                
     - cypress/run
