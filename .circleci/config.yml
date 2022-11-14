@@ -8,13 +8,3 @@ workflows:
       # "run" is the name of the job defined in Cypress orb
       - cypress/run
           #start: npm start
-
-scheduled-workflow:
-  triggers:
-    - schedule:
-        cron: "60 * * * 1,2,3,4,5,6"
-        filters:
-          branches:
-            only:
-              - master
-    - cypress/run
