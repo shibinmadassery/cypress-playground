@@ -12,9 +12,8 @@ workflows:
 scheduled-workflow:
   triggers:
     - schedule:
-        corn: "* * * * *"
+        cron: "* * * *"
         filters:
           branches:
-            only: main
-  jobs:
-    - cypress/run
+            only:
+              - master
