@@ -9,6 +9,7 @@ const address = ('105 Lubowitz Creek, Suite 276, 40176, Molliehaven, Montana, Un
 const loginUrl = ("https://staging.gumroad.com/login?gr_internal=1")
 const dashboardUrl = ('https://app.staging.gumroad.com/dashboard')
 const gumroadusername = 'shibin.m+001@gmail.com'; const gumroadpassword = `Welcome@gumroad`;
+const gumroadInvalidUsername = 'invalid@invalid.com'; const invalidPassword = `InvalidPassword`; 
 
 export function test01() {
   cy.visit('')
@@ -107,4 +108,15 @@ export function verifyingGumroadHomePage() {
     
     cy.contains('Login');cy.contains('Start Selling');
 
+}
+
+export function visitInternalLoginPage() {
+    cy.visit(Cypress.env('internalloginUrl'))
+}
+
+export function inputInvalidDetails() {
+    cy.get(':nth-child(6) > .required').type(gumroadInvalidUsername);
+    cy.get('.password').type(invalidPassword);
+    cy.contains('Login').click();
+    cy.contains('An account does not exist with that email.').should('be.visible');
 }
