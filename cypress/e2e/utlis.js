@@ -125,6 +125,7 @@ export function inputInvalidDetails() {
 export function freeProductPurchase() {
     cy.visit(freeProductUrl)
     cy.contains('FreeProduct').should('be.visible')
+    cy.wait(3999)
     //cy.get('[@type="text"]').type('0')
     cy.get('[placeholder="0+"]').type('0')
     cy.wait(3999)
