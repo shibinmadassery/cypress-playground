@@ -8,6 +8,7 @@ const phonenumber = Math.floor(Math.random() * 1000000000);
 const address = ('105 Lubowitz Creek, Suite 276, 40176, Molliehaven, Montana, United States')
 const loginUrl = ("https://staging.gumroad.com/login?gr_internal=1")
 const dashboardUrl = ('https://app.staging.gumroad.com/dashboard')
+const freeProductUrl = ('https://shibinm.staging.gumroad.com/l/brf')
 const gumroadusername = 'shibin.m+001@gmail.com'; const gumroadpassword = `Welcome@gumroad`;
 const gumroadInvalidUsername = 'invalid@invalid.com'; const invalidPassword = `InvalidPassword`; 
 
@@ -119,4 +120,30 @@ export function inputInvalidDetails() {
     cy.get('.password').type(invalidPassword);
     cy.contains('Login').click();
     cy.contains('An account does not exist with that email.').should('be.visible');
+}
+
+export function freeProductPurchase() {
+    cy.visit(freeProductUrl)
+    cy.contains('FreeProduct').should('be.visible')
+    //cy.get('[@type="text"]').type('0')
+    cy.get('[placeholder="0+"]').type('0')
+    cy.wait(3999)
+    cy.contains('I want this!').click()
+    cy.contains('Your cart')
+    cy.wait(3999)
+    cy.get('input[type=email]').type('shibin.mguest01@gmail.com')
+    cy.wait(3999)
+    cy.get('[placeholder="Full name"]').type('SHIBIN MADASSERY')
+    cy.get('[placeholder="Street address"]').type('StreetADddress')
+    cy.get('[placeholder="City"]').type('CityName', { delay: 10})
+    cy.wait(3999)
+    cy.get('[placeholder="County"]').type('CountryName', { delay: 10})
+    cy.wait(3999)
+    cy.get('[placeholder="Postal"]').type('0', { delay: 10})
+    cy.wait(3999)
+    cy.get('[placeholder="Postal"]').clear();
+    cy.get('[placeholder="Postal"]').type('00000', { delay: 10})
+    cy.wait(3000)
+    cy.get('[class="primary"]').click();
+    cy.wait(3000)
 }
