@@ -19,6 +19,7 @@ module.exports = defineConfig({
     "invalid": "invalid",
     "staging": 'https://staging.gumroad.com',
     "production": 'https://gumroad.com/',
-    "internalloginUrl": "https://staging.gumroad.com/login?gr_internal=1"
+    "internalloginUrl": "https://staging.gumroad.com/login?gr_internal=1",
+    "swagDemo": "https://www.saucedemo.com/"
   }
 });
