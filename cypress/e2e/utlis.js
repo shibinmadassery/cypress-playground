@@ -87,7 +87,7 @@ export function verifyinggumroaddashboard() {
 export function logout() {
     cy.get('.user-avatar').click();
     cy.contains("Logout").click();
-    cy.get('h1').contains('Welcome back').should('be.visible');
+    cy.get('h1').contains('Log in').should('be.visible');
 
 }
 
